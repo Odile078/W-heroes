@@ -13,7 +13,7 @@ public class Sql2oHeroDao implements HeroDao{
 
     @Override
     public void add(Hero hero) {
-        String sql = "INSERT INTO heroes (name) VALUES (:name)"; //raw sql
+        String sql = "INSERT INTO heroes (name, squadId) VALUES (:name, :squadId)"; //raw sql
         try(Connection con = sql2o.open()){ //try to open a connection
             int id = (int) con.createQuery(sql, true) //make a new variable
                     .bind(hero) //map my argument onto the query so we can use information from it
@@ -39,6 +39,43 @@ public class Sql2oHeroDao implements HeroDao{
             return con.createQuery("SELECT * FROM heroes WHERE id = :id")
                     .addParameter("id", id) //key/value pair, key must match above
                     .executeAndFetchFirst(Hero.class); //fetch an individual item
+        }
+    }
+
+    @Override
+    public void update(int id, String newName, int newsquadId){
+        String sql = "UPDATE heroes SET (name, squadId) = (:name, :squadId) WHERE id=:id";   //raw sql
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("name", newName)
+                    .addParameter("squadId", newsquadId)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    @Override
+    public void deleteById(int id) {
+        String sql = "DELETE from heroes WHERE id=:id";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
+    }
+
+    @Override
+    public void clearAllHeroes() {
+        String sql = "DELETE from heroes";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
         }
     }
 }

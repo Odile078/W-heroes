@@ -10,29 +10,43 @@ public class Hero {
     private String power;
     private String weakness;
     private int age;
+    private int squadId;
     private boolean completed;
     private LocalDateTime createdAt;
     private int id;
 
-    public Hero(String name){
+    public Hero(String name, int squadId){
         this.name = name;
         this.power = power;
         this.weakness = weakness;
         this.age = age;
+        this.squadId = squadId;
         this.completed = false;
         this.createdAt = LocalDateTime.now();
     }
 
+    public int getSquadId() {
+        return squadId;
+    }
+
+    public void setsquadId(int squadId) {
+        this.squadId = squadId;
+    }
+
     public void setName(String name) {
+
         this.name = name;
     }
     public void setPower(String power) {
+
         this.power = power;
     }
     public void setWeakness(String weakness) {
+
         this.weakness = weakness;
     }
     public void setAge(Integer age) {
+
         this.age = age;
     }
 
