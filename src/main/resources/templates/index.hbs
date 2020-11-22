@@ -1,11 +1,10 @@
 {{#partial "content"}}
 
-    <h1> List o' stuff to do!</h1>
+    <h1> List of our Heroes!</h1>
 
     {{#if heroes}}
         {{#each heroes }}
-            <p>Current hero:</p>
-            <p>{{ name }} <a href="/heroes/{{id}}">read more...</a></p>
+            <p><a href="/squads/{{squadId}}/heroes/{{id}}">{{Name}}</a></p>
         {{/each}}
     {{else}}
         <p>No heroes!</p>
