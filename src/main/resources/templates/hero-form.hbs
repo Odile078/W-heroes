@@ -1,0 +1,21 @@
+{{#partial "content"}}
+
+    {{#if editHero}}
+        <h1>Edit this Hero!</h1>
+        <form action="/heroes/{{editHero.id}}" method="post">
+            <label for="name">Edit this hero's name</label>
+            <input id="name" name="name" type="text" value="{{editHero.name}}">
+
+    {{else}}
+            <h1>Add a new Hero!</h1>
+
+        <form action="/heroes" method="post">
+            <label for="name">Task Name</label>
+            <input id="name" name="name" type="text">
+
+    {{/if}}
+        <button type="submit" class="btn btn-default">Go!</button>
+    </form>
+{{/partial}}
+
+{{> layout.hbs}}
