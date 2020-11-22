@@ -1,4 +1,4 @@
-# Caesar Ciphering
+# W-heroes
 
 This project was developped using Java.
 
@@ -13,7 +13,7 @@ This is a Java program that allows you to recruit a well-balanced team of superh
 ## Installation / Setup instruction
 * Open Terminal {Ctrl+Alt+T}
 
-* git clone ```https://github.com/Odile078/Caesar-Ciphering.git```
+* git clone ```https://github.com/Odile078/W-heroes.git```
 
 * cd Caesar-Ciphering
 
@@ -23,6 +23,7 @@ This is a Java program that allows you to recruit a well-balanced team of superh
 
 * Java
 * markdown
+* Psql
 
 
 ## Contact Information 
