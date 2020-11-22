@@ -85,7 +85,7 @@ public class Sql2oSquadDaoTest {
         squadDao.clearAllSquads();
         assertTrue(daoSize > 0 && daoSize > squadDao.getAll().size());
     }
-
+/*
     @Test
     public void getAllTasksByCategoryReturnsTasksCorrectly() throws Exception {
         Squad squad = setupNewSquad();
@@ -101,7 +101,7 @@ public class Sql2oSquadDaoTest {
         assertTrue(squadDao.getAllHeroesBySquad(squadId).contains(otherHero));
         assertFalse(squadDao.getAllHeroesBySquad(squadId).contains(thirdHero)); //things are accurate!
     }
-
+*/
     // helper method
     public Squad setupNewSquad(){
         return new Squad("worker");

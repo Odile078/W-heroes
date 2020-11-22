@@ -30,7 +30,7 @@ public class Sql2oHeroDaoTest {
         heroDao.add(hero);
         assertNotEquals(originalHeroId, hero.getId()); //how does this work?
     }
-
+/*
     @Test
     public void existingTasksCanBeFoundById() throws Exception {
         Hero hero = setupNewHero();
@@ -38,7 +38,7 @@ public class Sql2oHeroDaoTest {
         Hero foundHero =  heroDao.findById(hero.getId()); //retrieve
         assertEquals(hero, foundHero); //should be the same
     }
-
+*/
     @Test
     public void addedTasksAreReturnedFromgetAll() throws Exception {
         Hero hero = setupNewHero();
