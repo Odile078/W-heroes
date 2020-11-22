@@ -4,7 +4,7 @@ This project was developped using Java.
 
 ## Description
 
-This is a Java program that allows you to recruit a well-balanced team of superheroes.
+This is a Java program that allows you to recruit a team of superheroes and adding your own heroes.
 ## Author
  Odile Uwimpuhwe
 
