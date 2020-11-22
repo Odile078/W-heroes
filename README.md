@@ -4,7 +4,7 @@ This project was developped using Java.
 
 ## Description
 
-This is a Java program of Caesar cipher decryption and encryption of letter with regard to the key chosen.
+This is a Java program that allows you to recruit a well-balanced team of superheroes.
 ## Author
  Odile Uwimpuhwe
 
