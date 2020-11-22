@@ -16,10 +16,10 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
-        String connectionString = "jdbc:h2:~/todolist.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        String connectionString = "jdbc:h2:~/herolist.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "", "");
-        Sql2oTaskDao taskDao = new Sql2oTaskDao(sql2o);
-        Sql2oCategoryDao categoryDao = new Sql2oCategoryDao(sql2o);
+        Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
+        Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
 
 
         //get: show all tasks in all categories and show all categories
