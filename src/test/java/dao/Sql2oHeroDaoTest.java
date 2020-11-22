@@ -24,8 +24,8 @@ public class Sql2oHeroDaoTest {
     }
 
     @Test
-    public void addingCourseSetsId() throws Exception {
-        Hero hero = new Hero ("Lucky");
+    public void addingHeroSetsId() throws Exception {
+        Hero hero = setupNewHero();
         int originalHeroId = hero.getId();
         heroDao.add(hero);
         assertNotEquals(originalHeroId, hero.getId()); //how does this work?
@@ -33,22 +33,65 @@ public class Sql2oHeroDaoTest {
 
     @Test
     public void existingTasksCanBeFoundById() throws Exception {
-        Hero hero = new Hero ("Lucky");
+        Hero hero = setupNewHero();
         heroDao.add(hero); //add to dao (takes care of saving)
-        Hero foundHero = heroDao.findById(hero.getId()); //retrieve
+        Hero foundHero =  heroDao.findById(hero.getId()); //retrieve
         assertEquals(hero, foundHero); //should be the same
     }
 
     @Test
     public void addedTasksAreReturnedFromgetAll() throws Exception {
-        Hero hero = new Hero ("Lucky");
+        Hero hero = setupNewHero();
         heroDao.add(hero);
-        assertEquals(1, heroDao.getAll().size());
+        assertEquals(1,  heroDao.getAll().size());
     }
 
     @Test
     public void noTasksReturnsEmptyList() throws Exception {
-        assertEquals(0, heroDao.getAll().size());
+        assertEquals(0,  heroDao.getAll().size());
+    }
+
+    @Test
+    public void updateChangesTaskContent() throws Exception {
+        String initialName = "Lucky";
+        Hero hero = setupNewHero();
+        heroDao.add(hero);
+
+        heroDao.update(hero.getId(),"Maze", 1);
+        Hero updatedHero=  heroDao.findById(hero.getId()); //why do I need to refind this?
+        assertNotEquals(initialName, updatedHero.getName());
+    }
+
+    @Test
+    public void deleteByIdDeletesCorrectTask() throws Exception {
+        Hero hero = setupNewHero();
+        heroDao.add(hero);
+        heroDao.deleteById(hero.getId());
+        assertEquals(0,  heroDao.getAll().size());
+    }
+
+    @Test
+    public void clearAllClearsAll() throws Exception {
+        Hero hero = setupNewHero();
+        Hero otherHero = new Hero("Maze", 2);
+        heroDao.add(hero);
+        heroDao.add(otherHero);
+        int daoSize =  heroDao.getAll().size();
+        heroDao.clearAllHeroes();
+        assertTrue(daoSize > 0 && daoSize >  heroDao.getAll().size()); //this is a little overcomplicated, but illustrates well how we might use `assertTrue` in a different way.
+    }
+
+    @Test
+    public void categoryIdIsReturnedCorrectly() throws Exception {
+        Hero hero = setupNewHero();
+        int originalSquadId = hero.getSquadId();
+        heroDao.add(hero);
+        assertEquals(originalSquadId,  heroDao.findById(hero.getId()).getSquadId());
+    }
+
+    //define the following once and then call it as above in your tests.
+    public Hero setupNewHero(){
+        return new Hero("Lucky", 1);
     }
 
 
