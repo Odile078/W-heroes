@@ -33,7 +33,8 @@ public class HeroTest {
 
     //helper methods
     public Hero setupNewHero(){
-        return new Hero("Lucky");
+
+        return new Hero("Lucky",1);
     }
 
 }
