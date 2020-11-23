@@ -11,18 +11,27 @@
     </head>
 {{/block}}
 <body>
-    <div class="container-fluid pl-0 pr-0">
-         <nav class="navbar navbar-expand-lg text-white">
-             <a class="navbar-brand" href="/"><h3><strong>Our Every day heroes</strong></h3></a>
-             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav float-right mr-4">
-                         <a class="nav-item nav-link" href="/hero">Hero</a>
-                         <a class="nav-item nav-link" href="/squad">Squad</a>
-             </div>
-             </div>
-         </nav>
-    </div>
+    <section>
+        <div class="row navigator">
+            <div class="col-md-4">
+                <a class="navbar-brand" href="/"><p><strong>Home</strong></p></a>
+            </div>
+
+            <div class="col-md-2">
+               <a class="nav-item nav-link" href="/hero">Hero</a>
+            </div>
+            <div class="col-md-2">
+                <a class="nav-item nav-link" href="/squad">Squad</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="welcome">Welcome to W-heroes</h2>
+            </div>
+        </div>
+
+    </section>
+
 {{#block "content"}}{{/block}}
 {{#block "footer"}}{{/block}}
 <script src="/js/jquery-3.4.0.min.js"></script>

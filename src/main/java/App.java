@@ -50,7 +50,7 @@ public class App {
             int idOfHero = Integer.parseInt(req.params(":id"));
             Hero foundHero = Hero.findById(idOfHero);
             model.put("hero", foundHero);
-            return new ModelAndView(model, "more.hbs");
+            return new ModelAndView(model, "details.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/squad-form", (req, res) -> {

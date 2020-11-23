@@ -1,6 +1,6 @@
 {{#partial "content"}}
     <section class="home">
-        <div row>
+        <div class="row" >
 
             <div class="col-md-12">
                 <h2 class="hero-title">Heroes</h2>
@@ -8,18 +8,18 @@
         </div>
         <div class="container">
             <div >
-                <div class="heroes row">
+                <div class=" row">
                     {{#each hero}}
-                        <div class="col-md-4">
-                        <div class="hero-item jumbotron detail-form">
-                            <img src="/img/DIAMONDHEAD06_4C.png" alt="">
+                        <div class="col-md-6">
+                        <div class=" jumbotron detail-form">
+
                             <p>Name: {{ name }} </p>
                             <p>Age: {{ age }}</p>
                             <p>Special power: {{ power }}</p>
                             <p>Weakness: {{ weakness }}</p>
                             <p>Id : {{ id }}</p>
-                            <a href="new/{{id}}" class="btns btn btn-primary">Hero Stats</a><br><br>
-                            <a href="/squad" class="btns btn btn-primary">Add {{ name }} To Squad</a>
+                            <a href="new/{{id}}" class=" btn btn-primary">Hero Stats</a><br><br>
+                            <a href="/squad" class=" btn btn-primary">Add {{ name }} To Squad</a>
                         </div>
                         </div>
 

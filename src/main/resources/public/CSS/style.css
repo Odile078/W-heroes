@@ -1,4 +1,38 @@
+.navigator{
+    background-color: rgba(36, 178, 243, 0.637);
+    border-radius: 0 0 2rem 2rem;
+    box-shadow:  0 0 0 2px rgba(34, 32, 32, 0.25);
+    height: 80px;
+    padding-top: 10px;
 
+}
+.welcome{
+text-align:center;
+}
+.navigator p{
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    padding-left: 50px;
+    color: rgb(19, 68, 70);
+
+}
+.navigator a{
+    padding-left: 100px;
+    color:rgb(19, 68, 70);
+    font-size: 40px;
+    text-decoration: none;
+    font-family: 'Peddana', serif;
+
+}
+.navigator a:hover{
+    color: cadetblue;
+    border-radius:10px ;
+    box-shadow: -1px 11px 42px -7px rgba(0,0,0,0.69);
+    margin-left: 100px;
+    padding-left: 10px;
+    padding-right: 30px;
+    text-decoration: none;
+}
 .home1{
 
 height:600px;
@@ -6,6 +40,14 @@ height:600px;
  background-repeat: no-repeat;
  background-cover:cover;*/
  background-color:black;
+}
+.home2{
+
+height:600px;
+background: url('/images/raw.png') ;
+ background-repeat: no-repeat;
+ background-size:cover;*/
+
 }
 .home{
 
@@ -20,13 +62,17 @@ background-color:black;
 height:600px;
 }
 .hero-back{
+width:600px;
 margin-top:20px;
 height: 300px;
-background: url('/images/raw.png') ;
+background: url('/images/raw-2.png') ;
  background-repeat: no-repeat;
 }
 .hero-intro{
  height:100px;
+ font-family: 'Lobster', cursive;
+     font-size: 25px;
+
 
 }
 .intro{
@@ -68,6 +114,11 @@ a{
 text-decoration:none;
 
 }
+.success{
+margin-top:100px;
+
+}
+
 /*
 @import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
 *{

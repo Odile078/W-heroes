@@ -7,29 +7,29 @@ import static org.junit.Assert.*;
 public class HeroTest {
 
     @Test
-    public void newHero_instantiatesCorrectly_true() {
+    public void hero_instantiatesCorrectly_true() {
         Hero newHero = Hero.setUpNewHero();
         assertTrue(newHero instanceof Hero);
     }
     @Test
-    public void newHero_getName_String() {
+    public void hero_getName_String() {
         Hero newHero = Hero.setUpNewHero();
-        assertEquals("Atemba",newHero.getName());
+        assertEquals("Captain America",newHero.getName());
     }
     @Test
-    public void newHero_getAge_Int() {
+    public void hero_getAge_Int() {
         Hero newHero = Hero.setUpNewHero();
-        assertEquals(23,newHero.getAge());
+        assertEquals(30,newHero.getAge());
     }
     @Test
-    public void newHero_getPower_String() {
+    public void hero_getPower_String() {
         Hero newHero = Hero.setUpNewHero();
-        assertEquals("flying",newHero.getPower());
+        assertEquals("strength",newHero.getPower());
     }
     @Test
-    public void newHero_getWeakness_String() {
+    public void hero_getWeakness_String() {
         Hero newHero = Hero.setUpNewHero();
-        assertEquals("fire",newHero.getWeakness());
+        assertEquals("music",newHero.getWeakness());
     }
     @Test
     public void newHero_getAllInstances_true() {
