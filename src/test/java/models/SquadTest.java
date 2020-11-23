@@ -14,7 +14,7 @@ public class SquadTest {
     @Test
     public void newSquad_getName_String() {
         Squad newSquad = Squad.setUpNewSquad();
-        assertEquals("Avengers",newSquad.getSquadName());
+        assertEquals("Vogue",newSquad.getSquadName());
     }
     @Test
     public void newSquad_getSize_Int() {
@@ -24,7 +24,7 @@ public class SquadTest {
     @Test
     public void newSquad_getPower_String() {
         Squad newSquad = Squad.setUpNewSquad();
-        assertEquals("Infinity Stone",newSquad.getCause());
+        assertEquals("WorldSaving",newSquad.getCause());
     }
     @Test
     public void newSquad_getInstances_true() {
@@ -39,7 +39,7 @@ public class SquadTest {
         Hero newHero = Hero.setUpNewHero();
         Hero newHero1 = Hero.setUpNewHero1();
         newSquad.setSquadMembers(newHero);
-        assertEquals("Atemba",newSquad.getSquadMembers().get(0).getName());
+        assertEquals("Captain America",newSquad.getSquadMembers().get(0).getName());
     }
 
     @Test
@@ -49,7 +49,7 @@ public class SquadTest {
         newSquad.clearAllSquadMembers();
         newSquad.getSquadMembers().add(newHero);
         newSquad.getSquadMembers().add(newHero);
-        assertEquals("Atemba",newSquad.getSquadMembers().get(0).getName());
+        assertEquals("Captain America",newSquad.getSquadMembers().get(0).getName());
     }
     @Test
     public void addMember_addsMemberToSquad_Hero(){
@@ -65,9 +65,9 @@ public class SquadTest {
     @Test
     public void setNewMember_hero(){
         Hero.clearAllHeroes();
-        Hero newHwero = Hero.setUpNewHero();
+        Hero newHero = Hero.setUpNewHero();
         Squad testSquad = Squad.setUpNewSquad();
-        testSquad.setSquadMembers(newHwero);
+        testSquad.setSquadMembers(newHero);
 
         assertEquals(1,testSquad.getSquadMembers().get(0).getId());
     }

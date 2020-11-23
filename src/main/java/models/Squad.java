@@ -37,6 +37,6 @@ public class Squad {
     public static void clearAllSquads(){ instances.clear(); }
     public void clearAllSquadMembers(){ getSquadMembers().clear(); }
 
-    public static Squad setUpNewSquad(){return new Squad("Avengers",5,"Infinity Stone");}
-    public static Squad setUpNewSquad1(){return new Squad("GameBoy",5,"PUBG");}
+    public static Squad setUpNewSquad(){return new Squad("Vogue",5,"WorldSaving");}
+    public static Squad setUpNewSquad1(){return new Squad("League",5,"EvilExtermination");}
 }

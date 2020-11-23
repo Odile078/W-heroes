@@ -8,7 +8,20 @@ This is a Java program that allows you to recruit a team of superheroes and addi
 ## Author
  Odile Uwimpuhwe
 
+## Demonstration
 
+*Home page
+![home page](Photos/home.png)
+
+*Heroes page
+![heroes page](Photos/hero.png)
+*Squad page
+![Squad page](Photos/squad1.png)
+![Squad page](Photos/squad2.png)
+*Adding heroes
+![Adding heroes page](Photos/heroform.png)
+*Adding Squad
+![Adding squad page](Photos/squadform.png)
 
 ## Installation / Setup instruction
 * Open Terminal {Ctrl+Alt+T}
@@ -23,7 +36,7 @@ This is a Java program that allows you to recruit a team of superheroes and addi
 
 * Java
 * markdown
-* Psql
+* Handlebars
 
 
 ## Contact Information 

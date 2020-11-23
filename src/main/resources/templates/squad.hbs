@@ -35,22 +35,26 @@
             <div class="row">
 
                     {{#each squads}}
-                        <div class="squad-cont col-md-6">
+                        <div class=" col-md-6">
                             <img src="" alt="">
                             <div class="jumbotron detail-form">
                                 <h1>{{ squadName }} </h1>
-                                <button  class="btns float-right"> <a href="new/{{squadId}}">Squad Stats</a></button>
+
                                 <p>Id: {{squadId}}</p>
                                 <p>Purpose: {{cause}}</p>
                                 <p>Max participants: {{ size }}</p>
                                 <br><br>
+                                <hr class="hr">
                                 <h3>MEMBERS</h3>
-                                <button class="addMember add-btn" >Add New Member</button>
+
+                                <button class="btn btn-primary" >Add New Member</button>
                                 {{#each squadMembers}}
-                                    <div class="member-cont">
+                                    <div class="">
                                         <h5>Name: {{this.name}}</h5>
                                         <h5>Power: {{power}}</h5>
                                     </div>
+                                    <hr class="hr">
+                                    <br>
                                 {{/each}}
                             </div>
                         </div>
