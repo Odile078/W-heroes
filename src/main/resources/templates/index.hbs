@@ -1,14 +1,29 @@
 {{#partial "content"}}
+    <section class="home1">
 
-    <h1> List of our Heroes!</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md 6">
 
-    {{#if heroes}}
-        {{#each heroes }}
-            <p><a href="/squads/{{squadId}}/heroes/{{id}}">{{Name}}</a></p>
-        {{/each}}
-    {{else}}
-        <p>No heroes!</p>
-    {{/if}}
+                    <div class="hero-back">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md 12">
+                    <div class="hero-intro">
+                        <h3 class="intro">Becoming a hero require only your determination</h3>
+                        <a href="/hero-form"><button class="intobtn btn btn-primary">Create Hero</button></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
 {{/partial}}
-
 {{> layout.hbs}}

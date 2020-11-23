@@ -1,60 +1,42 @@
 package models;
 
-import java.util.Objects;
+import java.util.ArrayList;
+
 public class Squad {
-    private String name;
+
+    private int squadId;
+    private String squadName;
+    private int squadSize;
     private String cause;
-    private int size;
-    private int id;
+    private ArrayList<Hero>  squadMembers = new ArrayList<>();
+    private static ArrayList<Squad> instances = new ArrayList<>();
 
-    public Squad(String name) {
-        this.name = name;
+
+    public Squad(String name, int size, String cause ){
+        squadName = name;
+        squadSize = size;
         this.cause = cause;
-        this.size = size;
-    }
+        this.squadMembers = new ArrayList<>();
+        instances.add(this);
+        this.squadId = instances.size();
 
-    public String getName() {
-        return name;
     }
-    public String getCause() {
-        return cause;
+    public int getSquadId(){
+        return squadId;}
+    public static Squad findBySquadId(int id) {return instances.get(id-1);}
+    public String getSquadName() {return squadName;}
+    public int getSize() {return squadSize;}
+    public String getCause() {return this.cause;}
+    public static ArrayList<Squad> getInstances(){return instances;}
+    public ArrayList<Hero> getSquadMembers(){
+        return squadMembers;
     }
-    public int getSize() {
-        return size;
+    public void setSquadMembers(Hero newMember) {
+        squadMembers.add(newMember);
     }
+    public static void clearAllSquads(){ instances.clear(); }
+    public void clearAllSquadMembers(){ getSquadMembers().clear(); }
 
-    public int getId() {
-        return id;
-    }
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setCause(String cause) {
-        this.cause = cause;
-    }
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Squad)) return false;
-        Squad squad = (Squad) o;
-        return size == squad.size &&
-                id == squad.id &&
-                Objects.equals(name, squad.name) &&
-                Objects.equals(cause, squad.cause);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, cause, size, id);
-    }
+    public static Squad setUpNewSquad(){return new Squad("Avengers",5,"Infinity Stone");}
+    public static Squad setUpNewSquad1(){return new Squad("GameBoy",5,"PUBG");}
 }
